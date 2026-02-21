@@ -63,6 +63,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-bottom: 24px;
 }
 
@@ -86,10 +87,18 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 80px;
   width: 340px;
-  background-color: rgb(0, 185, 108);
   border-radius: 5px;
   /* margin-block: 8px; */
+}
+
+.won {
+  background-color: rgb(0, 185, 108);;
+}
+
+.lost {
+background-color: rgb(170, 14, 14);;
 }
 
 .status * {
@@ -100,7 +109,18 @@ main {
 
 .status > h2 {
   font-variant-caps: small-caps;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+.farewell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70px;
+  min-width: 200px;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .status > p {
@@ -125,6 +145,21 @@ main {
   align-items: center;
   border-radius: 5px;
   padding: 5px;
+  position: relative;
+}
+
+.language.lost::before {
+    content: "💀";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 0.85rem;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .answer {
@@ -157,8 +192,12 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 9px;
   padding: 2px;
+}
+
+.blurred {
+  opacity: 0.4;
 }
 
 .key {
@@ -175,6 +214,26 @@ main {
   cursor: pointer;
 }
 
+.guessed {
+  transform: scale(0.92);
+}
+
+.guessed.correct {
+  background-color: #30ff49;
+}
+
+.guessed.wrong {
+  background-color: #ff3a3a;
+}
+
+.new-game-wrapper {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 .new-game {
   width: 220px;
   height: 50px;
@@ -182,6 +241,17 @@ main {
   border-radius: 5px;
   font-variant-caps: small-caps;
   font-size: 1.2rem;
-  margin-top: 20px;
   cursor: pointer;
+
+  opacity: 0;
+  transition: opacity 200ms ease;
+
+  pointer-events: none;
+}
+
+.new-game.show {
+  opacity: 1;
+  pointer-events: auto;
+
+  transition: opacity 700ms ease;
 }

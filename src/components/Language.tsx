@@ -1,20 +1,27 @@
+import { clsx } from "clsx"
+
 type Props = {
     id: string;
     name: string;
-    isAlive: boolean;
+    lost: boolean;
     backgroundColor: string;
     color: string;
 }
 
-export default function Language({ id, name, isAlive, backgroundColor, color }: Props) {
+export default function Language({ id, name, lost, backgroundColor, color }: Props) {
     const styles = {
         backgroundColor: backgroundColor,
         color: color,
     }
+    
+    const className = clsx({
+        language: true,
+        lost: lost,
+    })
 
     return (
         <>
-            <div className="language" style={styles}>
+            <div className={className} style={styles}>
                 {name}
             </div>
         </>
