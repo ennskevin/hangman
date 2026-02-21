@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import { nanoid } from "nanoid"
 import { clsx } from "clsx"
+import Confetti from "react-confetti"
+
 import Header from './components/Header';
 import Language from './components/Language';
 import Key from './components/Key';
@@ -137,6 +139,7 @@ export default function App() {
     return (
         <>
             <main>
+                {gameWon? <Confetti recycle={false} /> : null}
                 <div className="container main-section">
 
                     <Header />
