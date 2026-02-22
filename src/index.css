@@ -46,9 +46,6 @@ button {
   font-family: figtree, sans-serif;
 }
 
-main {
-}
-
 .main-section {
   display: flex;
   flex-direction: column;
@@ -123,9 +120,6 @@ background-color: rgb(170, 14, 14);;
   padding: 10px;
 }
 
-.status > p {
-  /* font-size: 1.1rem; */
-}
 
 .languages {
   /* height: 64px; */

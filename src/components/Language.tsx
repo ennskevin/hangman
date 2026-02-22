@@ -8,7 +8,7 @@ type Props = {
     color: string;
 }
 
-export default function Language({ id, name, lost, backgroundColor, color }: Props) {
+export default function Language({ name, lost, backgroundColor, color }: Props) {
     const styles = {
         backgroundColor: backgroundColor,
         color: color,

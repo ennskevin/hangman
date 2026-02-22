@@ -8,7 +8,7 @@ type Props = {
     guess: (letter: string) => void;
 }
 
-export default function Key({ id, letter, isCorrect, isGuessed, guess }: Props) {
+export default function Key({ letter, isCorrect, isGuessed, guess }: Props) {
     const styles = {
         backgroundColor: `${isCorrect ? "#30ff49" : "#ff3a3a"}`,
         transform: "scale(0.92)"
