@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { nanoid } from "nanoid"
 import { clsx } from "clsx"
 import Confetti from "react-confetti"
